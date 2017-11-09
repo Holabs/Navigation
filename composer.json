@@ -12,7 +12,7 @@
 	"require": {
 		"php": ">=7.1",
 		"nette/utils": "^2.4",
-	  	"holabs/utils": "^0.1"
+	  	"holabs/utils": "^1.0"
 	},
 	"autoload": {
 		"classmap": ["src"]
