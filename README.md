@@ -49,7 +49,7 @@ use Nette\Application\UI\Presenter;
 abstract class BasePresenter extends Presenter {
 
 	/** @var Manager @inject */
-    public $navigation;
+	public $navigation;
 
 
 	public function startup() {
@@ -66,7 +66,7 @@ abstract class BasePresenter extends Presenter {
 			->addRenderCondition(function () { // Set render callback
 				return $this->getUser()->isAllowed('Dashboard', 'default');
 			});
-
+	
 		$section = $this->navigation->getSection('settings');
 		$section->createItem('users', 'Users settings')
 			->setLink('Users:default')
@@ -80,8 +80,8 @@ abstract class BasePresenter extends Presenter {
 	}
 	
 	public function beforeRender() {
-  		parent::beforeRender();
-  		$this->template->sections = $this->navigation->getSections();
+		parent::beforeRender();
+		$this->template->sections = $this->navigation->getSections();
 	}
 }
 ```
