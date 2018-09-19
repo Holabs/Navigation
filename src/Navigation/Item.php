@@ -270,6 +270,11 @@ class Item implements IItem {
 
 		return $result;
 	}
+	
+	public function __clone() {
+		// Fix recursion
+		$this->items = clone $this->items;
+	}
 
 
 }
