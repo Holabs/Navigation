@@ -10,9 +10,8 @@
 		}
 	],
 	"require": {
-		"php": ">=7.1",
-		"nette/utils": "^2.4",
-	  	"holabs/utils": "^1.0"
+		"php": ">=7.2",
+	  	"holabs/utils": "dev-master"
 	},
 	"autoload": {
 		"classmap": ["src"]
