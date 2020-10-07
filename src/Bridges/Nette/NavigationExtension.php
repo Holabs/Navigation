@@ -4,7 +4,7 @@
 namespace Holabs\Navigation\Bridges\Nette;
 
 use Holabs\Navigation\Manager;
-use Nette\DI\Extensions\ExtensionsExtension;
+use Nette\DI\CompilerExtension;
 
 
 /**
@@ -12,7 +12,7 @@ use Nette\DI\Extensions\ExtensionsExtension;
  * @package      holabs/navigation
  * @copyright    Copyright © 2017, Tomáš Holan [www.tomasholan.eu]
  */
-class NavigationExtension extends ExtensionsExtension {
+class NavigationExtension extends CompilerExtension {
 
 	public function loadConfiguration() {
 		$builder = $this->getContainerBuilder();
