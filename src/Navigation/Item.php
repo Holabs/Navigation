@@ -245,11 +245,8 @@ class Item implements IItem {
 	public function isActive(): bool {
 		$result = FALSE;
 		foreach ($this->activeConditions as $handler) {
-			//$result = call_user_func_array($handler, [$this]);
-			$return = Callback::invoke($handler, $this);
-			if ($return !== NULL) {
-				$result = (bool)$return;
-			}
+			$return = $handler($this);
+			$result = $return !== NULL ? (bool)$return : $result;
 		}
 
 		return $result;
@@ -261,11 +258,8 @@ class Item implements IItem {
 	public function isRenderingAllowed(): bool {
 		$result = TRUE;
 		foreach ($this->renderConditions as $handler) {
-			//$result = call_user_func_array($handler, [$this]);
-			$return = Callback::invoke($handler, $this);
-			if ($return !== NULL) {
-				$result = (bool)$return;
-			}
+			$return = $handler($this);
+			$result = $return !== NULL ? (bool)$return : $result;
 		}
 
 		return $result;
